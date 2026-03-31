@@ -1,0 +1,14 @@
+.video-slider {
+  position: relative;
+  width: 100%;
+  height: 600px;       /* container height */
+  overflow: hidden;    /* hide anything outside container */
+  background: black;   /* fallback for letterboxing */
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* fills container completely */
+  object-position: bottom; /* crop happens at top, bottom stays visible */
+}

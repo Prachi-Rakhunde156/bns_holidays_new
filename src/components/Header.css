@@ -1,0 +1,317 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= FIXED HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgb(254, 254, 254);
+}
+
+/* Prevent content overlap */
+body {
+  margin-top: 120px; /* adjust based on header height */
+}
+
+/* ================= TOP NAVBAR ================= */
+.top-navbar {
+  background: rgb(62, 62, 96);
+  padding: 10px 40px;
+}
+
+.top-navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  list-style: none;
+  color: white;
+}
+
+.top-navbar ul li {
+  position: relative;
+  cursor: pointer;
+}
+
+.top-navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+.top-navbar a:hover {
+  color: #ff5a5f;
+}
+
+/* ================= MAIN HEADER ================= */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: white;
+}
+
+/* ================= LOGO ================= */
+.logo img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ================= SEARCH BOX ================= */
+.search-box {
+  position: relative;
+  width: 90%;
+  margin: 0 100px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 20px 45px 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  background:rgb(243, 194, 102);
+}
+
+/* Search Button */
+.search-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgb(243, 194, 102);
+  border: none;
+  color: gray;
+  height: 0;
+  width: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background: #d1cfcf;
+}
+
+
+/* ================= NAV ITEM ================= */
+.nav-item {
+  position: relative;
+  cursor: pointer;
+}
+
+/* ================= SIMPLE DROPDOWN ================= */
+.dropdown {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 500px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  padding: 20px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.dropdown li {
+  list-style: none;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: black;
+  border-radius: 4px;
+}
+
+.dropdown li a:hover {
+  background: #f5f5f5;
+}
+
+/* ================= MEGA MENU ================= */
+.mega-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 900px;
+  display: flex;
+  background: #f5f7fa;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+/* Left Sidebar */
+.mega-left {
+  width: 250px;
+  background: #eaeaea;
+  padding: 20px;
+}
+
+.mega-left p {
+  margin: 15px 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.mega-left p:hover {
+  color: #605c5c;
+}
+/* MEGA MENU */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 1100px;
+  display: flex;
+  background: #949699;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  z-index: 999;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* LEFT PANEL */
+.mega-left {
+  width: 260px;
+  background: #9e9d9d;
+  padding: 20px;
+}
+
+.mega-left p {
+  padding: 12px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.mega-left p.active,
+.mega-left p:hover {
+  background: rgb(156, 154, 154);
+  border-radius: 4px;
+}
+
+/* RIGHT SIDE */
+.mega-right {
+  display: flex;
+  gap: 50px;
+  padding: 25px;
+  flex: 1;
+}
+
+/* COLUMN */
+.mega-column {
+  min-width: 230px;
+}
+
+/* HEADINGS */
+.mega-column h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.mega-column h5 {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* LINKS */
+.mega-column p {
+  margin: 6px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* HOVER EFFECT */
+.mega-column p:hover {
+  color: #d3abad;
+}
+
+/* NEW TAG */
+.new {
+  background: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 6px;
+}
+
+/* Right Section */
+.mega-right {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  flex: 1;
+}
+
+/* Columns */
+.mega-column {
+  min-width: 200px;
+}
+
+.mega-column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.mega-column h5 {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.mega-column p {
+  margin: 6px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.mega-column p:hover {
+  color: #655959;
+}
+.fixed-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 250px;             
+  background-color: #4e4b4b; 
+  border: 1px solid #ddd;  
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.fixed-dropdown p {
+  padding: 12px 20px;
+  margin: 0;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+}
+
+.fixed-dropdown p:hover {
+  background-color: #f5f5f5;
+  color: #ff5a5f;
+  border-radius: 4px;
+}
+

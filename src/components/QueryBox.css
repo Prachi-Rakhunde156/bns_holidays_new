@@ -1,0 +1,36 @@
+.query-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.query-section h2 {
+  margin-bottom: 20px;
+}
+
+.query-form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.query-form input,
+.query-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.query-form button {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.query-form button:hover {
+  background: #0056b3;
+}

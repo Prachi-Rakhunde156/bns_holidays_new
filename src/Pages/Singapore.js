@@ -1,0 +1,137 @@
+import React, { useState } from "react";
+import "./Pages.css";
+import { Link } from "react-router-dom";
+
+const tours = [
+  {
+    title: "Best of Singapore",
+    days: "5 Days",
+    countries: "1 Country",
+    cities: "1 City",
+    dates: "10 Dates",
+    price: "₹95,000",
+    emi: "₹4,500/mo",
+    image: "https://www.sharpholidays.in/blog/wp-content/uploads/2018/05/Singapore-1280x540.jpg"
+  },
+  {
+    title: "Singapore & Sentosa",
+    days: "4 Days",
+    countries: "1 Country",
+    cities: "1 City",
+    dates: "8 Dates",
+    price: "₹85,000",
+    emi: "₹4,000/mo",
+    image: "https://cdn-imgix.headout.com/media/images/db6db2b3c8ff8558c2f86919cfea4405-7359-singapore-sentosa-fun-pass-03.jpg?auto=format&w=900&h=562.5&q=90&ar=16%3A10&fit=crop"
+  },
+  {
+    title: "Universal Studios Tour",
+    days: "3 Days",
+    countries: "1 Country",
+    cities: "1 City",
+    dates: "6 Dates",
+    price: "₹75,000",
+    emi: "₹3,500/mo",
+    image: "https://jnptravelvn.com/wp-content/uploads/2022/12/universal-studios-singapore-kids-family-guide-honeykids-asia.jpg"
+  },
+  {
+    title: "Luxury Singapore Tour",
+    days: "6 Days",
+    countries: "1 Country",
+    cities: "1 City",
+    dates: "5 Dates",
+    price: "₹1,20,000",
+    emi: "₹5,500/mo",
+    image: "https://d3lf10b5gahyby.cloudfront.net/web_app/packages-page/singapore.jpg"
+  }
+];
+
+const Singapore = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  return (
+    <div className="tour-container">
+      <h1>Singapore Tour Packages</h1>
+
+      {tours.map((tour, index) => (
+        <div className="tour-card" key={index}>
+
+          {/* IMAGE */}
+          <div className="tour-image">
+            <span className="badge">Popular Today</span>
+            <img src={tour.image} alt={tour.title} />
+          </div>
+
+          {/* CONTENT */}
+          <div className="tour-info">
+            <h2>
+              {tour.title === "Best of Singapore" ? (
+                <Link to="/singapore-landing" className="title-link">
+                  {tour.title}
+                </Link>
+              ) : (
+                tour.title
+              )}
+            </h2>
+
+            <div className="rating">
+              ⭐⭐⭐⭐⭐ <span>110 Reviews</span>
+            </div>
+
+            {showModal && (
+              <div className="modal-overlay">
+                <div className="modal-box">
+
+                  <div className="modal-header">
+                    <h2>Tour Includes</h2>
+                    <span className="close-btn" onClick={() => setShowModal(false)}>✕</span>
+                  </div>
+
+                  <div className="icons-row">
+                    <div><span>🏨</span><p>Hotel</p></div>
+                    <div><span>🍽️</span><p>Meals</p></div>
+                    <div><span>✈️</span><p>Flight</p></div>
+                    <div><span>📷</span><p>Sightseeing</p></div>
+                    <div><span>🚌</span><p>Transport</p></div>
+                    <div><span>📄</span><p>Visa</p></div>
+                  </div>
+
+                  <div className="modal-content">
+                    <p>👨‍✈️ Tour includes services of <b>BNS Holidays</b>.</p>
+                    <p className="note">
+                      *Airfare included. Taxes extra.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+            )}
+
+            <p className="inclusive" onClick={() => setShowModal(true)}>
+              ∞ All Inclusive
+            </p>
+
+            <p className="details">
+              {tour.days} • {tour.countries} • {tour.cities}, {tour.dates}
+            </p>
+
+            <p className="dates">Dates Filling Fast</p>
+          </div>
+
+          {/* PRICE */}
+          <div className="tour-price">
+            <p className="start">Starts from</p>
+            <h2>{tour.price}</h2>
+            <p className="emi">EMI from {tour.emi}</p>
+
+            <button className="book-btn">Book Online</button>
+            <button className="whatsapp-btn">Share on WhatsApp</button>
+            <button className="details-btn">View Tour Details</button>
+          </div>
+
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Singapore;

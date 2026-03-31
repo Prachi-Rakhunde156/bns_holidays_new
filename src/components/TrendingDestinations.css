@@ -1,0 +1,80 @@
+.trending-section {
+  padding: 30px;
+  margin: 30px;
+  width: 95%;
+   border-radius: 10px;
+  background-color: rgb(240, 238, 238);
+}
+
+.trending-section h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+  /* BLUE LINE */
+.trending-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60px;       /* length of line */
+  height: 3px;       /* thickness */
+  background-color: #007bff; /* blue color */
+  border-radius: 2px;
+}
+
+/* SLIDER CONTAINER */
+.card-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; 
+  scroll-behavior: auto;
+}
+/* Hide scrollbar */
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+.card-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* CARD */
+.card {
+  min-width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #e7e5e5;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 10px;
+  font-weight: 500;
+}
+.img-box {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* IMAGE */
+.img-box img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+/* ZOOM EFFECT */
+.img-box:hover img {
+  transform: scale(1.1);
+}
